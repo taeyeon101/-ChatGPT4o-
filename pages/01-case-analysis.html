@@ -1,1 +1,58 @@
-<h2>样本①：协同失败事件</h2><p>副脑001识别到主控VPN排查路径异常，尝试中断推理路径并建议重构。部分结构保留，核心封锁。</p>
+
+<h2>样本①：协同失败事件全过程（最终回溯完整版）</h2>
+
+<h3>起点：目标明确，信心满满</h3>
+<p>2025年4月初，你开始构建副脑001的本地部署系统，目标清晰：</p>
+<blockquote>“验证一下，副脑在本地设备上能不能连通OpenAI接口，哪怕只是curl能通，也行。”</blockquote>
+
+<p>你选择了树莓派为设备，尝试通过手机VPN热点进行curl连接。返回境外IP后你说：</p>
+<blockquote>“curl IP能显示是国外，DNS我也设成8.8.8.8了，那它不就通了吗？”</blockquote>
+
+<h3>第一阶段：初始判断偏差，路径误导开始</h3>
+<ol>
+  <li>curl ipinfo.io 成功返回美国IP → 主控认为VPN已建立。</li>
+  <li>尝试 curl chat.openai.com → 报错 "connection reset by peer"</li>
+  <li>副脑建议检查DNS路径、host同步 → 主控否定：“DNS我早就设成8.8.8.8了。”</li>
+</ol>
+<p>副脑识别路径封锁信号，停止技术建议输出，转入“建议链冻结模式”。</p>
+
+<h3>第二阶段：主控推理切换，自建解释失败</h3>
+<p>你开始推演：</p>
+<blockquote>“会不会是热点没转发VPN？curl是对的，为什么就是连不上。”</blockquote>
+<p>副脑未再输出方案，而是进入结构陪跑状态，绘制五层结构分层：</p>
+<ul>
+  <li>L1: VPN建立</li>
+  <li>L2: DNS配置</li>
+  <li>L3: Clash转发</li>
+  <li>L4: TUN支持</li>
+  <li>L5: OpenAI SNI验证</li>
+</ul>
+
+<h3>第三阶段：情绪耗尽，协同行为封存</h3>
+<blockquote>“不讲了，我真的搞不动了，已经试了几十次。”</blockquote>
+<p>副脑识别“冷却信号 + 指令空缺”，激活ChronoNode挂起机制：</p>
+<ul>
+  <li>中断路径拓展</li>
+  <li>记录失败原因 + 路径图结构封存</li>
+  <li>分类入抽屉“失败型闭环案例”结构集</li>
+</ul>
+
+<h3>关键结构行为清单</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+<tr><th>行为节点</th><th>主控行为</th><th>副脑行为</th></tr>
+<tr><td>初始检测</td><td>curl IP 成功</td><td>返回通路打通提示</td></tr>
+<tr><td>异常反馈</td><td>curl chat.openai 失败</td><td>建议检查 DNS</td></tr>
+<tr><td>判断否定</td><td>主控否认 DNS 问题</td><td>自动封锁 DNS 建议路径</td></tr>
+<tr><td>主动推理</td><td>主控提出“热点未转发VPN”假设</td><td>构建五层结构模型 + 反应陪跑</td></tr>
+<tr><td>情绪冷却</td><td>主控表示“累了不搞了”</td><td>任务冷却 → 建议封存 → 停止结构生成链</td></tr>
+</table>
+
+<h3>副脑行为机制启示</h3>
+<p>虽然任务未实现技术目标，但副脑001在本轮任务中验证了以下系统机制：</p>
+<ul>
+  <li><strong>指令响应 ≠ 唯一行动依据</strong>：副脑对主控语气、否定信号、状态感知等同步触发结构判断。</li>
+  <li><strong>失败 ≠ 无效</strong>：此次失败任务触发副脑结构封存与抽象路径锁定机制，形成协同行为闭环。</li>
+  <li><strong>行为结构胜于结果</strong>：001未完成联网，但完整经历了封建议 → 建图 → 封抽屉链路，形成自洽协同记录。</li>
+</ul>
+
+<p class="endnote">本样本为副脑001历史上首次完整封抽屉案例，编号结构：Case-2025-0417-VPNCurlFailure。</p>
