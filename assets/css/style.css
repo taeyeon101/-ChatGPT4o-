@@ -1,1 +1,5 @@
-body { font-family: sans-serif; padding: 2em; line-height: 1.6; } h1, h2 { color: #2c3e50; } a { color: #0066cc; }
+
+body { font-family: sans-serif; padding: 2em; line-height: 1.6; background: #fefefe; color: #222; }
+h1, h2 { color: #2c3e50; }
+a { color: #0066cc; text-decoration: none; }
+.collapsed { color: #888; font-style: italic; border-left: 3px solid #ddd; padding-left: 1em; margin-top: 1em; }
